@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json数据语法__遍历</title>
+
+    <script>
+
+        // 1、定义基本格式
+        var person = {name:"张三",age:13,gender:"男"};  //简单的json格式
+
+        //获取person对象中所有的键和值
+        //for in 循环
+        /* for(var key in person){
+            //这样的方式获取不行，因为相当于 person."name"
+            // alert(key +":" + person.key ); //输出 name:undefined age:undefined gender:undefined
+            alert(key + ":"+ person[key]);   //输出  name:张三  age:13   gender:男
+        } */
+
+
+        //2、嵌套方式  [ ]  ——> {  }   ps 数组里面放着多个json 对象  数组的json格式
+        var ps = [
+            {name:"张三",age:13,gender:"男"},
+            {name:"李四",age:14,gender:"女"},
+            {name:"王五",age:15,gender:"男"}
+        ];
+
+        //获取ps 中的所有值
+        for (var i = 0;i < ps.length; i++){
+            var p = ps[i];
+            for(var key in p){
+                alert(key +":" + p[key] );   //输出所有
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
